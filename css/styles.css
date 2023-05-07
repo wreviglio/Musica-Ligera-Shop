@@ -38,7 +38,7 @@ header {
     float: left;
     width: 15%;
     height: 100%;
-    background: #fff;
+    background: #333;
 }
 
 #div_izq img {
@@ -53,7 +53,7 @@ header {
 }
 
 #div_med {
-    background-color: #ccc;
+    background-color: #333;
     height: 100%;
 }
 
@@ -247,7 +247,7 @@ main {
 
 /* Tarjetas de productos */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');*/
 
 
 html,
