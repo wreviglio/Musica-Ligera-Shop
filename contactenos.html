@@ -8,7 +8,7 @@
   <title>Música Ligera: Contáctenos</title>
   <link rel="stylesheet" href=".\css\styles.css">
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -64,10 +64,47 @@
 
   <!-- Main: Bloque principal con formulario de contacto -->
   <main>
-    <div class="formulario">
-      <h3>Formulario de contactos</h3>
+   <br>
+    <h3>Formulario de contactos</h3>
 
+    <div class="flexbox-container">
+      <div class="formulario"> 
+        
+        <form name="fvalida">
+  
+          <label for="">Nombre </label>
+          <input type="text" name="nombre" />
+      <br>
+          <label for="">Apellido </label>
+          <input type="text" name="apellido" />
+       <br>    
+          <!-- <label for="">Email </label>
+          <input type="email" name="email" required /> -->
+
+          <label for="user-email">Email: </label>
+            <input type="email" id="user-email" name="userEmail" />
+            <!-- <input type="submit" value="Validate" onclick="return validateEmail()" /> -->
+       <br>   
+          <label for="">Asunto </label>
+          <input type ="text" name="asunto" />
+       <br>  
+          <label for="">Mensaje </label>
+          <textarea name="mensaje" for="mensaje" placeholder="describe brevemente en menos de 300 carácteres" maxlength="300"></textarea>
+       <br>     
+          <input type="submit" name="enviar" value="Enviar datos" onclick="validarEnviar()" onclick="return validateEmail()"/>
+      </form>
     </div>
+
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Av. Gral. Paz 354 Córdoba Argentina&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+        </iframe>
+      </div>
+    </div>
+     
+</div>
+    
   </main>
 
   <br>
@@ -115,6 +152,68 @@
       <small>&copy; 2023 <b>Musica Ligera</b> - Todos los Derechos Reservados.</small>
     </div>
   </footer>
+
+
+  <script> 
+
+    function validarEnviar(){
+                  
+                  if (document.fvalida.nombre.value.length  == 0) {
+                      alert("Tiene que escribir su nombre")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+        
+                  if (document.fvalida.apellido.value.length  == 0) {
+                      alert("Tiene que escribir su apellido")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+
+                  if (document.fvalida.email.value.length  == 0) {
+                      alert("Tiene que escribir su email")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  if (document.fvalida.asunto.value.length  == 0) {
+                      alert("Tiene que escribir un asunto")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  if (document.fvalida.mensaje.value.length  == 0) {
+                      alert("Tiene que escribir un mensaje")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  alert("Muchas gracias por enviar el formulario")
+             document.fvalida.submit()
+                }
+
+               
+    
+    
+            function validateEmail(){
+                
+                // Define our regular expression.
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+                // Using test we can check if the text match the pattern
+                if( validEmail.test( jQuery('#user-email').val() ) ){
+                    alert('el Email es valido');
+                    return true;
+                }else{
+                    alert('Email invalido');
+                    return false;
+                }
+            }
+        
+          
+    </script>
+
 </body>
 
 </html>
