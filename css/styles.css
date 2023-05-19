@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Proxima+Nova|Open+Sans|Roboto');
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); */
 
 
 html,
@@ -18,6 +18,16 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/*  */
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
 header {
     width: 100%;
     left: 0;
@@ -26,13 +36,19 @@ header {
     z-index: 9999;
 }
 
+nav {
+    background: #333;
+    height: 90px;
+    width: 100%;
+    font-family: 'Proxima Nova' !important;
+}
+
 #header_top {
     background: #000 !important;
     color: #ffffff !important;
     min-height: 20px;
     top: 0;
     width: 100%;
-    /* height: 30px; */
     z-index: 100;
     display: block;
     justify-content: center;
@@ -47,68 +63,20 @@ header {
     margin: 0px;
 }
 
-
-#div_header {
-    width: 100%;
-    height: 90px;
-    text-align: center;
+.enlace{
+    position: absolute;
+    padding: 2px 15px;
 }
 
-#div_izq {
-    float: left;
-    width: 15%;
-    height: 100%;
-    background: #333;
-}
-
-#div_izq img {
-    width: 100%;
+.logo{
+    height: 85px;
 }
 
 #div_der {
     float: right;
-    width: 15%;
+    width: 12%;
     height: 100%;
     background-color: #f00;
-}
-
-#div_med {
-    background-color: #333;
-    height: 100%;
-}
-
-#div_med nav {
-
-    font-family: 'Proxima Nova' !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100%;
-}
-
-
-/* Menú del Header */
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: #333;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-}
-
-nav li a {
-    color: white;
-    display: block;
-    text-decoration: none;
-    padding: .5em 1em;
-}
-
-nav li a:hover {
-    background: #f00;
-    color: white;
 }
 
 .tools-header__icons {
@@ -116,25 +84,217 @@ nav li a:hover {
 }
 
 .contact-button {
-    margin: 38px 0 0 44px;
+    margin: 35px 0 0 20%;
+    color: #fff;
 }
 
 .link_whatsapp {
-    margin: 38px 0 0 44px;
+    margin: 34px 0 0 25%;
+    color: #fff;
 }
 
 .header--custom-svg {
     fill: #ffffff !important;
 }
 
-main {
-    margin-top: 120px;
+nav ul{
+    float: right;
+    margin-right: 20px;
 }
 
+nav ul li{
+    display: inline-block;
+    line-height: 90px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-family: 'Proxima Nova' !important;
+    font-size: 20px;
+    padding: 7px 20px;
+    border-radius: 3px;
+    /* text-transform: uppercase; */
+}
+
+li a.active, li a:hover{
+    background: #f00;
+    transition: .5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: left;
+    line-height: 80px;
+    margin-left: 30px;
+    margin-top: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+nav ul li:hover #menu ul {
+    height: 50px;
+    display: block;
+}
+
+#menu {
+    position: absolute;
+    z-index: 1000;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 120px;
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    display: none;
+    line-height: 30px;
+    margin-right: 28px;
+}
+
+#menu ul li {
+    background-color: #666;
+    line-height: 30px;
+    width: 210px;
+    margin-left: -10px;
+    margin-top: -1px;
+    padding-left: -10px;
+}
+
+#menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+    /* padding: 6px 10px 6px 14px; */
+    line-height: 30px;
+    padding-left: 25px;
+}
+
+@media screen and (max-width: 1024px){
+    .enlace{
+        padding-left: 5px;
+    }
+    nav ul{
+        margin-right: 10px;
+    }
+    nav ul li a{
+        font-size: 18px;
+        padding: 7px 10px;
+    }
+    #div_der {
+        width: 5%;
+    }
+    .tools-header__icons {
+        flex-direction: column-reverse;
+    }
+    .contact-button {
+        margin: 15px 0 0 0;
+        text-align: center;
+    }
+    .link_whatsapp {
+        margin: 19px 0 0 0;
+        text-align: center;
+    }
+
+    #menu ul {
+        width: 90px;
+    }
+
+    #menu ul li a {
+        padding: 0px 16px;
+    }
+}
+
+@media (max-width: 768px){
+    #div_der {
+        float: right;
+        width: 50px;
+    }
+    .tools-header__icons {
+        flex-direction: column-reverse;
+    }
+    .link_whatsapp {
+        margin: 19px 0 0 0;
+    }
+    .enlace{
+        padding-left: 0px;
+        position: initial;
+    }
+    .checkbtn{
+        display: block;
+        float: left;
+        margin-left: 30px;
+    }
+    .logo {
+        width: 179px;
+        margin: auto;
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        /* height: 70vh; */
+        background: #000;
+        top: 110px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+        margin-left: 50%;
+        text-align: left;
+    }
+    nav ul li a{
+        font-size: 20px;
+        margin-left: 40px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:-50%;
+    }
+
+    #menu ul {
+        left: 100px;
+        position: initial;
+    }
+    #menu ul li {
+        background-color: #666;
+        line-height: 30px;
+        width: 180px;
+        margin-left: -20px;
+        /* margin-top: 10px; */
+        margin: 0px;
+    }
+    #menu ul li a {
+        display: block;
+        padding: 6px 10px 6px 14px;
+        line-height: 30px;
+        margin-left: -5px;
+    }
+}
+
+
+main {
+    margin-top: 135px;
+} 
 
 /* Slider */
 
 .slider {
+    position: relative;
     width: 100%;
     margin: auto;
     margin-top: -20px;
@@ -397,7 +557,8 @@ main {
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    padding: .5em 1em;
+    padding: 0em 1em; 
+    /* padding: .5em 1em; */
 }
 
 .pie-pagina .grupo-1 .box ul li a:hover {
