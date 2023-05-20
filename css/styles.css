@@ -20,7 +20,7 @@ body {
 
 /*  */
 
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -63,12 +63,12 @@ nav {
     margin: 0px;
 }
 
-.enlace{
+.enlace {
     position: absolute;
     padding: 2px 15px;
 }
 
-.logo{
+.logo {
     height: 85px;
 }
 
@@ -97,31 +97,32 @@ nav {
     fill: #ffffff !important;
 }
 
-nav ul{
+nav ul {
     float: right;
     margin-right: 20px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     line-height: 90px;
 }
 
-nav ul li a{
+nav ul li a {
     color: #fff;
     font-family: 'Proxima Nova' !important;
     font-size: 20px;
-    padding: 7px 20px;
+    padding: 7px 14px;
     border-radius: 3px;
     /* text-transform: uppercase; */
 }
 
-li a.active, li a:hover{
+li a.active,
+li a:hover {
     background: #f00;
     transition: .5s;
 }
 
-.checkbtn{
+.checkbtn {
     font-size: 30px;
     color: #fff;
     float: left;
@@ -132,7 +133,7 @@ li a.active, li a:hover{
     display: none;
 }
 
-#check{
+#check {
     display: none;
 }
 
@@ -177,119 +178,11 @@ nav ul li:hover #menu ul {
     padding-left: 25px;
 }
 
-@media screen and (max-width: 1024px){
-    .enlace{
-        padding-left: 5px;
-    }
-    nav ul{
-        margin-right: 10px;
-    }
-    nav ul li a{
-        font-size: 18px;
-        padding: 7px 10px;
-    }
-    #div_der {
-        width: 5%;
-    }
-    .tools-header__icons {
-        flex-direction: column-reverse;
-    }
-    .contact-button {
-        margin: 15px 0 0 0;
-        text-align: center;
-    }
-    .link_whatsapp {
-        margin: 19px 0 0 0;
-        text-align: center;
-    }
-
-    #menu ul {
-        width: 90px;
-    }
-
-    #menu ul li a {
-        padding: 0px 16px;
-    }
-}
-
-@media (max-width: 768px){
-    #div_der {
-        float: right;
-        width: 50px;
-    }
-    .tools-header__icons {
-        flex-direction: column-reverse;
-    }
-    .link_whatsapp {
-        margin: 19px 0 0 0;
-    }
-    .enlace{
-        padding-left: 0px;
-        position: initial;
-    }
-    .checkbtn{
-        display: block;
-        float: left;
-        margin-left: 30px;
-    }
-    .logo {
-        width: 179px;
-        margin: auto;
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        /* height: 70vh; */
-        background: #000;
-        top: 110px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 20px 0;
-        line-height: 30px;
-        margin-left: 50%;
-        text-align: left;
-    }
-    nav ul li a{
-        font-size: 20px;
-        margin-left: 40px;
-    }
-    li a:hover, li a.active{
-        background: none;
-        color: red;
-    }
-    #check:checked ~ ul{
-        left:-50%;
-    }
-
-    #menu ul {
-        left: 100px;
-        position: initial;
-    }
-    #menu ul li {
-        background-color: #666;
-        line-height: 30px;
-        width: 180px;
-        margin-left: -20px;
-        /* margin-top: 10px; */
-        margin: 0px;
-    }
-    #menu ul li a {
-        display: block;
-        padding: 6px 10px 6px 14px;
-        line-height: 30px;
-        margin-left: -5px;
-    }
-}
 
 
 main {
     margin-top: 135px;
-} 
+}
 
 /* Slider */
 
@@ -429,11 +322,13 @@ main {
 
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
+    /* 16:9 */
     padding-top: 25px;
     height: 0;
     text-align: center;
 }
+
 .video-responsive iframe {
     position: absolute;
     top: 0;
@@ -497,7 +392,7 @@ main {
     color: white;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -531,7 +426,7 @@ main {
 }
 
 .pie-pagina .grupo-1 .box p {
-    margin: 30px;
+    margin: 30px 0;
     color: #fff;
 
 }
@@ -557,7 +452,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    padding: 0em 1em; 
+    padding: 0em 1em;
     /* padding: .5em 1em; */
 }
 
@@ -597,6 +492,241 @@ main {
     font-size: 15px;
 }
 
+
+/* formulario de contacto y mapa */
+
+
+.flexbox-container {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexbox-container>div {
+    width: 50%;
+    padding: 50px;
+
+}
+
+
+.flexbox-container>div:first-child {
+    margin-right: 50px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+form {
+    width: 600px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
+}
+
+form label {
+    width: 90px;
+    font-weight: bold;
+    display: inline-block;
+    margin: auto;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 320px;
+    padding: 6px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 32px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+    background-color: #000;
+}
+
+form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    /*resize: vertical | horizontal | none | both*/
+    resize: none;
+    display: block;
+}
+
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_iframe {
+    height: 400px !important;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .enlace {
+        padding-left: 5px;
+    }
+
+    nav ul {
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 7px 5px;
+    }
+
+    #div_der {
+        width: 5%;
+    }
+
+    .tools-header__icons {
+        flex-direction: column-reverse;
+    }
+
+    .contact-button {
+        margin: 15px 0 0 0;
+        text-align: center;
+    }
+
+    .link_whatsapp {
+        margin: 19px 0 0 0;
+        text-align: center;
+    }
+
+    #menu ul {
+        width: 90px;
+    }
+
+    #menu ul li a {
+        padding: 0px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #div_der {
+        /* float: right; */
+        width: 50px;
+    }
+
+    .tools-header__icons {
+        flex-direction: column-reverse;
+    }
+
+    .link_whatsapp {
+        margin: 19px 0 0 0;
+    }
+
+    .enlace {
+        padding-left: 0px;
+        position: initial;
+    }
+
+    .checkbtn {
+        display: block;
+        float: left;
+        margin-left: 30px;
+    }
+
+    .logo {
+        width: 179px;
+        margin: auto;
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        /* height: 70vh; */
+        background: #000;
+        top: 110px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+        margin-left: 50%;
+        text-align: left;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        margin-left: 40px;
+    }
+
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+
+    #check:checked~ul {
+        left: -50%;
+    }
+
+    #menu ul {
+        left: 100px;
+        position: initial;
+        margin-left: 200px;
+        margin-top: -34px;
+    }
+
+    #menu ul li {
+        background-color: #666;
+        line-height: 30px;
+        width: 200px;
+        margin-left: -20px;
+        /* margin-top: 10px; */
+        margin: 0px;
+    }
+
+    #menu ul li a {
+        display: block;
+        padding: 6px 10px 6px 14px;
+        line-height: 30px;
+        margin-left: -5px;
+    }
+
+    .slider {
+        display: none;
+    }
+}
+
 @media screen and (max-width:800px) {
     .pie-pagina .grupo-1 {
         width: 90%;
@@ -606,86 +736,9 @@ main {
     }
 }
 
-
-/* formulario de contacto y mapa */
-
-
-
-.flexbox-container {
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-}
-
-.flexbox-container > div {
-    width: 50%;
-    padding: 50px;
-
-}
+@media screen and (max-width:580px) {
+    .pie-pagina .grupo-1 .box figure img {
+        width: 200px;
     
-
-.flexbox-container > div:first-child {
-    margin-right: 50px;
+    }
 }
-
-
-
-*{box-sizing:border-box;}
-
-form{
-	width:600px;
-	padding:16px;
-	border-radius:10px;
-	margin:auto;
-	background-color:#ccc;
-}
-
-form label{
-	width:90px;
-	font-weight:bold;
-	display:inline-block;
-    margin:auto;
-}
-
-form input[type="text"],
-form input[type="email"]{
-	width:320px;
-	padding:6px 10px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	display:inline-block;
-}
-
-form input[type="submit"]{
-	width:100%;
-	padding:8px 16px;
-	margin-top:32px;
-	border:1px solid #000;
-	border-radius:5px;
-	display:block;
-	color:#fff;
-	background-color:#000;
-} 
-
-form input[type="submit"]:hover{
-	cursor:pointer;
-}
-
-textarea{
-	width:100%;
-	height:100px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;			
-	margin:8px 0;
-	/*resize: vertical | horizontal | none | both*/
-	resize: none;
-	display:block;
-}
-
-
-.mapouter{position:relative;text-align:right;width:100%;height:400px;}
-.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}
-.gmap_iframe {height:400px!important;}
