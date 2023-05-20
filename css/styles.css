@@ -574,8 +574,8 @@ margin: 20px;
 
 
 @media (max-width: 1500) {
-.row,
-.Formulario {
+.col-6,
+.mapa {
     flex-direction: column; /*Cambio de horizontal a vertical en ambas clases*/
 }
 
