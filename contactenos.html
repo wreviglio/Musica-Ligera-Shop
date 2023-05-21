@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Música Ligera Shop: Contáctenos</title>
+  <link rel="stylesheet" href=".\css\styles.css">
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="icon" href="img/ICONO ML.ico">
+</head>
+
+<body>
+
+  <!-- Header: cabecera con logo, menú y links de email y Whatsapp-->
+
+  <header>
+    <div id="header_top">
+      <h3>
+        ENVÍOS A TODO EL PAIS
+      </h3>
+    </div>
+    <nav>
+      <div id="div_der">
+        <div class="tools-header__icons">
+          <a href="#" class="contact-button" rel="nofollow">
+            <i class="fa-regular fa-envelope fa-xl"></i>
+          </a>
+          <a href="#" title="Whatsapp" class="link_whatsapp" id="link_whatsapp">
+            <i class="fa-brands fa-whatsapp fa-2xl"></i>
+          </a>
+        </div>
+      </div>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <a href="#" class="enlace">
+        <img src="./img/Logo_Música_Ligera2.png" alt="" class="logo">
+      </a>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="#">Instrumentos</a>
+          <div id="menu">
+            <ul>
+              <li><a href="./instrumentos_de_cuerda.html">De cuerda</a></li>
+              <li><a href="./instrumentos_de_viento.html">De viento</a></li>
+              <li><a href="./instrumentos_de_percusion.html">De percusión</a></li>
+              <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="./amplificadores.html">Amplificadores</a></li>
+        <li><a href="./accesorios.html">Accesorios</a></li>
+        <li><a class="active" href="./contactenos.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main: Bloque principal con formulario de contacto -->
+  <main>
+   <br>
+   <h1 class="title">Formulario de contactos</h1>
+
+    <div class="flexbox-container">
+      <div class="formulario"> 
+        
+        <form name="fvalida">
+  
+          <label for="">Nombre </label>
+          <input type="text" name="nombre" />
+      <br>
+          <label for="">Apellido </label>
+          <input type="text" name="apellido" />
+       <br>    
+          <!-- <label for="">Email </label>
+          <input type="email" name="email" required /> -->
+
+          <label for="user-email">Email: </label>
+            <input type="email" id="user-email" name="userEmail" />
+            <!-- <input type="submit" value="Validate" onclick="return validateEmail()" /> -->
+       <br>   
+          <label for="">Asunto </label>
+          <input type ="text" name="asunto" />
+       <br>  
+          <label for="">Mensaje </label>
+          <textarea name="mensaje" for="mensaje" placeholder="describe brevemente en menos de 300 carácteres" maxlength="300"></textarea>
+       <br>     
+          <input type="submit" name="enviar" value="Enviar datos" onclick="validarEnviar()" onclick="return validateEmail()"/>
+      </form>
+    </div>
+
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Av. Gral. Paz 354 Córdoba Argentina&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+        </iframe>
+      </div>
+    </div>
+     
+</div>
+    
+  </main>
+
+  <br>
+  <!--::::Pie de Pagina::::::-->
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="./index.html">
+            <img src="img/Logo_Música_Ligera2.png" alt="Logo de Musica Ligera2">
+          </a>
+        </figure>
+
+      </div>
+      <div class="box">
+        <ul>
+          <li><a href="./instrumentos_de_cuerda.html">Instrumentos de cuerda</a></li>
+          <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
+          <li><a href="./instrumentos_de_viento.html">Instrumentos de viento</a></li>
+          <li><a href="./percusion.html">Instrumentos de percusión</a></li>
+          <li><a href="./amplificadores.html">Amplificadores</a></li>
+          <li><a href="./accesorios.html">Accesorios</a></li>
+          <li><a href="./contactenos.html">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>SÍGUENOS</h2>
+        <div class="red-social">
+
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+
+          <p>
+            Cel. 3513123456<br>
+            ventas.musicaligerashop@gmail.com<br>
+            Av. Gral. Paz 354 Córdoba Argentina<br>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grupo-2">
+      <small>&copy; 2023 <b>Musica Ligera Shop</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+
+
+  <script> 
+
+    function validarEnviar(){
+                  
+                  if (document.fvalida.nombre.value.length  == 0) {
+                      alert("Tiene que escribir su nombre")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+        
+                  if (document.fvalida.apellido.value.length  == 0) {
+                      alert("Tiene que escribir su apellido")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+
+                  if (document.fvalida.email.value.length  == 0) {
+                      alert("Tiene que escribir su email")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  if (document.fvalida.asunto.value.length  == 0) {
+                      alert("Tiene que escribir un asunto")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  if (document.fvalida.mensaje.value.length  == 0) {
+                      alert("Tiene que escribir un mensaje")
+                      document.fvalida.nombre.focus()
+                      return 0
+                  }
+    
+                  alert("Muchas gracias por enviar el formulario")
+             document.fvalida.submit()
+                }
+
+               
+    
+    
+            function validateEmail(){
+                
+                // Define our regular expression.
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+                // Using test we can check if the text match the pattern
+                if( validEmail.test( jQuery('#user-email').val() ) ){
+                    alert('el Email es valido');
+                    return true;
+                }else{
+                    alert('Email invalido');
+                    return false;
+                }
+            }
+        
+          
+    </script>
+
+</body>
+
+</html>
