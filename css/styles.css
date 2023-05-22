@@ -602,6 +602,10 @@ textarea {
     /* background: grey; */
 }
 
+.tpo h1, h4{
+    text-align: center;
+}
+
 .tpo1 {
     color: #fff;
 }
