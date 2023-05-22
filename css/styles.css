@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Proxima+Nova|Open+Sans|Roboto');
 
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); */
-
 
 html,
 body {
@@ -18,13 +16,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/*  */
 
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
+    /* list-style: none; */
     box-sizing: border-box;
 }
 
@@ -337,6 +334,12 @@ main {
     height: 100%;
 }
 
+#clientes {
+    display: flex;
+    flex-direction: row;
+    height: 140px;
+}
+
 /* Footer */
 
 #footer {
@@ -496,37 +499,38 @@ main {
 /* formulario de contacto y mapa */
 
 
-*{
-    
+* {
+
     padding: 0px;
     margin: 0px;
     /* ajustar tipografia de ser necesario */
 
 }
 
-.flexbox-container{
-display: flex;
-flex-wrap: wrap;
+.flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
 
 }
 
 
 form label {
-width: 90px;
-font-weight: bold;
-display: inline-block;
-margin: auto;
+    width: 90px;
+    font-weight: bold;
+    display: inline-block;
+    margin: auto;
 }
+
 form input[type="text"],
 
 form input[type="email"] {
-width: 70%  ;
-padding: 8px 16px;
-border: 1px solid #000;
-border-radius: 5px;
-background-color: #fff;
-margin: 8px 0;
-display: inline-block;
+    width: 70%;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 8px 0;
+    display: inline-block;
 }
 
 /* form input[type="submit"]:hover {
@@ -534,50 +538,83 @@ cursor: pointer;
 }
 */
 
-.col-6{display:flex;width: 40%;
-flex:1;
-min-width: 250px;
+.col-6 {
+    display: flex;
+    width: 40%;
+    flex: 1;
+    min-width: 250px;
 }
 
 textarea {
-width: 90%;
-height: 100px;
-border: 1px solid #000;
-border-radius: 3px;
-background-color: #fff;
-margin: 8px 0;
-resize: none;
-display: block;
+    width: 90%;
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 8px 0;
+    resize: none;
+    display: block;
 }
 
-.col-6:first-child{display:inline-flex;width: 45%;
-border-radius: 10px;
-float: left;
-flex:1;
-padding: 16px;
-background-color: #ccc;
-margin: 20px;
-margin-bottom: 0px; 
+.col-6:first-child {
+    display: inline-flex;
+    width: 45%;
+    border-radius: 10px;
+    float: left;
+    flex: 1;
+    padding: 16px;
+    background-color: #ccc;
+    margin: 20px;
+    margin-bottom: 0px;
 }
 
-.mapa{display:inline-flex;width: 45% ;
-text-align: center;
-float: top;
-padding: 25px;
-background-color: #fff;
-margin: 20px;
+.mapa {
+    display: inline-flex;
+    width: 45%;
+    text-align: center;
+    float: top;
+    padding: 25px;
+    background-color: #fff;
+    margin: 20px;
 }
 
 
+/* Página resumen tpo.html */
+.tpo {
+    padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 10px;
+}
 
+.tpo ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
 
+.tpo ul li p {
+    margin-left: 15px;
+}
 
+.texto_destacado {
+    padding: 0 5px 2px;
+    color: rgb(106, 106, 236);
+    font-weight: 400 !important;
+    /* background: grey; */
+}
+
+.tpo1 {
+    color: #fff;
+}
+
+}
 
 @media (max-width: 1500) {
-.col-6,
-.mapa {
-    flex-direction: column; /*Cambio de horizontal a vertical en ambas clases*/
-}
+
+    .col-6,
+    .mapa {
+        flex-direction: column;
+        /*Cambio de horizontal a vertical en ambas clases*/
+    }
 
 }
 
@@ -655,7 +692,7 @@ margin: 20px;
         display: block;
     }
 
-    ul {
+    nav ul {
         position: fixed;
         width: 100%;
         /* height: 70vh; */
@@ -729,6 +766,6 @@ margin: 20px;
 @media screen and (max-width:580px) {
     .pie-pagina .grupo-1 .box figure img {
         width: 200px;
-    
+
     }
 }
