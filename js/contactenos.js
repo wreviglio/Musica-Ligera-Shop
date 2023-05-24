@@ -1,18 +1,17 @@
 
 function validateEmail(){
-                
-    // Define our regular expression.
-    var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
-    // Using test we can check if the text match the pattern
-    if( validEmail.test( jQuery('#user-email').val() ) ){
-        alert('el Email es valido');
-        return true;
-    }else{
-        alert('Email invalido');
-        return false;
-    }
+    var form = document.getElementById("Formulario");
+      var opTag = document.getElementById("opTag");
+      function submitForm(event) {
+         event.preventDefault();
+         form.style.display = "none";
+         opTag.innerHTML = "<b>Form submit successful</b>";
+      }
+      form.addEventListener('submit', submitForm);
+    
 }
+
 
 
 function ValidarInfo() {
@@ -50,15 +49,23 @@ function ValidarInfo() {
     }
 
     
-    if (document.Formulario.Comentarios.value.length == 0) {
+    if (document.Formulario.Comentarios.value.length < 10) {
         alert("Por favor, dejar un comentario o consulta más extensa para atenderle mejor ")
         document.Formulario.Comentarios.focus()
         return 0
     }
 
-    
+    if(!document.getElementById("terminos").checked){
+        alert("Por favor,acepte los terminos y condiciones")
+        document.Formulario.checkbox.focus()
+        return 0
+
+    }
+
+
+   
     alert("Muchas gracias por enviar el formulario,esperamos poder contactarle pronto")
-    document.fvalida.submit()
+    document.Formulario.submit()
 }
 
 function validarEntero(valor) {
