@@ -64,46 +64,62 @@
 
   <!-- Main: Bloque principal con formulario de contacto -->
   <main>
-   <br>
-   <h1 class="title">Formulario de contactos</h1>
+   <div class="flexbox-container">
+      <form name="Formulario">
 
-    <div class="flexbox-container">
-      <div class="formulario"> 
-        
-        <form name="fvalida">
-  
-          <label for="">Nombre </label>
-          <input type="text" name="nombre" />
-      <br>
-          <label for="">Apellido </label>
-          <input type="text" name="apellido" />
-       <br>    
-          <!-- <label for="">Email </label>
-          <input type="email" name="email" required /> -->
 
+      <div class="col-6">
+        <div class="formulario_01">
+
+          <h1>Contactanos por consultas y comentarios</h1>
+          <br>
+          <label for="Name"> Nombre</label>
+          <br>
+          <input id="Name" type= "text" name= "Nombre" placeholder= "Nombre(s)" required >
+          <br>
+          <label for="Second Name"> Apellido</label>
+          <br>
+          <input id="Second Name" type= "text" name= "Apellido" placeholder= "Apellido(s)" required >
+          <br>
+          <label for="Cell Number"> Teléfono</label>
+          <br>
+          <input id="Cell Number" type= "text" name= "Telefono" placeholder= "11-0000-1111" required >
+          <br>
           <label for="user-email">Email: </label>
-            <input type="email" id="user-email" name="userEmail" />
-            <!-- <input type="submit" value="Validate" onclick="return validateEmail()" /> -->
-       <br>   
-          <label for="">Asunto </label>
-          <input type ="text" name="asunto" />
-       <br>  
-          <label for="">Mensaje </label>
-          <textarea name="mensaje" for="mensaje" placeholder="describe brevemente en menos de 300 carácteres" maxlength="300"></textarea>
-       <br>     
-          <input type="submit" name="enviar" value="Enviar datos" onclick="validarEnviar()" onclick="return validateEmail()"/>
-      </form>
-    </div>
+          <br>
+          <input type="email" id="user-email" name="userEmail" onclick="return"validateEmail required >
 
-    <div class="mapouter">
-      <div class="gmap_canvas">
-        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Av. Gral. Paz 354 Córdoba Argentina&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+          <br>
 
-        </iframe>
+          <label for="Message"> Comentarios</label>
+          <br>
+          <textarea id="Message" name= "Comentarios" rows="5" cols="50" placeholder="Sus opiniones serán tomadas en cuenta" required></textarea>
+          <br>
+          <input type="checkbox" name="checkbox" id="terminos" value="check" required> Acepto los Términos y Condiciones* 
+          <br>  
+          <input type="submit" name="enviar" value="Enviar datos"onclick="ValidarInfo()">
+          <br>
+
+        </div>
       </div>
+
+      <div class="mapa">
+        <div class="aside">
+
+          <h2> ¡Encuentranos!</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.1044459436184!2d-64.1849158!3d-31.411248299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329878402844c7%3A0xbb087cd82d9bfee6!2sGral.%20Paz%20354%2C%20X2568BHQ%20C%C3%B3rdoba!5e0!3m2!1sen!2sar!4v1684374072552!5m2!1sen!2sar"
+           width=150% height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+          </iframe>
+
+        </div>
+      </div>
+
+      </form>
+      <p id="opTag"></p>
+
     </div>
-     
-</div>
+    
     
   </main>
 
@@ -155,65 +171,7 @@
   </footer>
 
 
-  <script> 
-
-    function validarEnviar(){
-                  
-                  if (document.fvalida.nombre.value.length  == 0) {
-                      alert("Tiene que escribir su nombre")
-                      document.fvalida.nombre.focus()
-                      return 0
-                  }
-        
-                  if (document.fvalida.apellido.value.length  == 0) {
-                      alert("Tiene que escribir su apellido")
-                      document.fvalida.nombre.focus()
-                      return 0
-                  }
-    
-
-                  if (document.fvalida.email.value.length  == 0) {
-                      alert("Tiene que escribir su email")
-                      document.fvalida.nombre.focus()
-                      return 0
-                  }
-    
-                  if (document.fvalida.asunto.value.length  == 0) {
-                      alert("Tiene que escribir un asunto")
-                      document.fvalida.nombre.focus()
-                      return 0
-                  }
-    
-                  if (document.fvalida.mensaje.value.length  == 0) {
-                      alert("Tiene que escribir un mensaje")
-                      document.fvalida.nombre.focus()
-                      return 0
-                  }
-    
-                  alert("Muchas gracias por enviar el formulario")
-             document.fvalida.submit()
-                }
-
-               
-    
-    
-            function validateEmail(){
-                
-                // Define our regular expression.
-                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-
-                // Using test we can check if the text match the pattern
-                if( validEmail.test( jQuery('#user-email').val() ) ){
-                    alert('el Email es valido');
-                    return true;
-                }else{
-                    alert('Email invalido');
-                    return false;
-                }
-            }
-        
-          
-    </script>
+  <script src="./js/contactenos.js"></script>
 
 </body>
 
