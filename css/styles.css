@@ -663,6 +663,9 @@ textarea {
     #menu ul li a {
         padding: 0px 16px;
     }
+    .pie-pagina .grupo-1 .box figure img {
+        width: 250px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -756,9 +759,7 @@ textarea {
     .slider {
         display: none;
     }
-}
 
-@media screen and (max-width:800px) {
     .pie-pagina .grupo-1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -767,9 +768,8 @@ textarea {
     }
 }
 
-@media screen and (max-width:580px) {
+@media screen and (max-width: 480px) {
     .pie-pagina .grupo-1 .box figure img {
-        width: 200px;
-
+        width: 179px;
     }
 }
