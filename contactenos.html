@@ -64,8 +64,7 @@
 
   <!-- Main: Bloque principal con formulario de contacto -->
   <main>
-   
-    <div class="flexbox-container">
+   <div class="flexbox-container">
       <form name="Formulario">
 
 
@@ -76,29 +75,29 @@
           <br>
           <label for="Name"> Nombre</label>
           <br>
-          <input id="Name" type= "text" name= "Nombre" placeholder= "Nombre(s)" >
+          <input id="Name" type= "text" name= "Nombre" placeholder= "Nombre(s)" required >
           <br>
           <label for="Second Name"> Apellido</label>
           <br>
-          <input id="Second Name" type= "text" name= "Apellido" placeholder= "Apellido(s)" >
+          <input id="Second Name" type= "text" name= "Apellido" placeholder= "Apellido(s)" required >
           <br>
           <label for="Cell Number"> Teléfono</label>
           <br>
-          <input id="Cell Number" type= "text" name= "Telefono" placeholder= "11-0000-1111" >
+          <input id="Cell Number" type= "text" name= "Telefono" placeholder= "11-0000-1111" required >
           <br>
           <label for="user-email">Email: </label>
           <br>
-          <input type="email" id="user-email" name="userEmail" onclick="return"validateEmail >
+          <input type="email" id="user-email" name="userEmail" onclick="return"validateEmail required >
 
           <br>
 
           <label for="Message"> Comentarios</label>
           <br>
-          <textarea id="Message" name= "Comentarios" rows="5" cols="50" placeholder="Sus opiniones serán tomadas en cuenta"></textarea>
+          <textarea id="Message" name= "Comentarios" rows="5" cols="50" placeholder="Sus opiniones serán tomadas en cuenta" required></textarea>
           <br>
-          <!-- <input type="checkbox" name="checkbox" id="terminos" value="check"> Acepto los Términos y Condiciones
-          <br> -->  
-          <input type="submit" name="enviar" value="Enviar datos" onclick="ValidarInfo()" onclick="return validateEmail()">
+          <input type="checkbox" name="checkbox" id="terminos" value="check" required> Acepto los Términos y Condiciones* 
+          <br>  
+          <input type="submit" name="enviar" value="Enviar datos"onclick="ValidarInfo()">
           <br>
 
         </div>
@@ -117,8 +116,10 @@
       </div>
 
       </form>
+      <p id="opTag"></p>
 
     </div>
+    
     
   </main>
 
