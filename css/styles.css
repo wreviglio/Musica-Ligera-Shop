@@ -338,6 +338,7 @@ main {
     display: flex;
     flex-direction: row;
     height: 140px;
+    overflow:hidden;
 }
 
 /* Footer */
@@ -610,7 +611,7 @@ textarea {
     color: #fff;
 }
 
-}
+
 
 @media (max-width: 1500) {
 

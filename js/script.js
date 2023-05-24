@@ -7,7 +7,7 @@ function append(parent, el) {
 }
 
 const ul = document.getElementById('clientes');
-const url = 'https://randomuser.me/api/?results=20';
+const url = 'https://randomuser.me/api/?results=60';
 
 fetch(url)
     .then((resp) => resp.json())
