@@ -338,6 +338,7 @@ main {
     display: flex;
     flex-direction: row;
     height: 140px;
+    overflow:hidden;
 }
 
 /* Footer */
