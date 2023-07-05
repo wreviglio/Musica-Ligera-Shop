@@ -11,8 +11,7 @@
     justify-content: center;
 }
 
-/*
-p {
+.container_crud p {
     font-family: 'Times New Roman', Times, serif;
     background-color: #f9f9f9;
     max-width: 400px;
@@ -20,7 +19,7 @@ p {
     padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.container_crud h1, h2, h3, h4, h5, h6 {
     text-align: center;
     color: #007bff;
 }
@@ -30,9 +29,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     justify-content: center;
 }
-*/
 
-form_crud {
+.container_crud form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -41,7 +39,7 @@ form_crud {
     border-radius: 5px;
 } 
 
-table {
+.container_crud table {
     max-width: 90%;
     margin: 0 auto;
     padding: 20px;
@@ -50,14 +48,14 @@ table {
     border-radius: 5px;
 }
 
-/* label {
+.container_crud label {
     display: block;
     margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"],
-textarea {
+.container_crud input[type="text"],
+.container_crud input[type="number"],
+.container_crud textarea {
     width: 90%;
     padding: 10px;
     margin-bottom: 10px;
@@ -65,7 +63,7 @@ textarea {
     border-radius: 5px;
 }
 
-input[type="submit"] {
+.container_crud input[type="submit"] {
     padding: 10px;
     background-color: #007bff;
     color: #ffffff;
@@ -74,11 +72,11 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.container_crud input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-button {
+.container_crud button {
     padding: 8px;
     margin:4px;
     background-color: #007bff;
@@ -87,7 +85,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-*/
 
 .container_crud button:hover {
     background-color: #0056b3;
