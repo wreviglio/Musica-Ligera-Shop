@@ -48,9 +48,10 @@
     border-radius: 5px;
 }
 
-.container_crud label {
+#formulario label {
     display: block;
     margin-bottom: 5px;
+    margin: initial;
 }
 
 .container_crud input[type="text"],

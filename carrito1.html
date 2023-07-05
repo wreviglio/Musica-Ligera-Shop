@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Música Ligera Shop: Amplificadores</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles1.css">
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="./img/icono_ml.ico">
+</head>
+
+<body>
+
+  <!-- Header: cabecera con logo, menú y links de email y Whatsapp-->
+
+  <header>
+    <div id="header_top">
+      <h3>
+        ENVÍOS A TODO EL PAIS
+      </h3>
+    </div>
+    <nav>
+      <div id="div_der">
+        <div class="tools-header__icons">
+          <a href="#" class="contact-button" rel="nofollow">
+            <i class="fa-regular fa-envelope fa-xl"></i>
+          </a>
+          <a href="#" title="Whatsapp" class="link_whatsapp" id="link_whatsapp">
+            <i class="fa-brands fa-whatsapp fa-2xl"></i>
+          </a>
+        </div>
+      </div>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <a href="#" class="enlace">
+        <img src="./img/Logo_Música_Ligera2.png" alt="" class="logo">
+      </a>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="#">Instrumentos <i class="fa-solid fa-caret-right"></i></a>
+          <div id="menu">
+            <ul>
+              <li><a href="./instrumentos_de_cuerda.html">De cuerda</a></li>
+              <li><a href="./instrumentos_de_viento.html">De viento</a></li>
+              <li><a href="./instrumentos_de_percusion.html">De percusión</a></li>
+              <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="./amplificadores.html">Amplificadores</a></li>
+        <li><a href="./accesorios.html">Accesorios</a></li>
+        <li><a href="./contactenos.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main: Bloque principal -->
+  <main>
+    <br>
+    <h1 class="title">Carrito de compras</h1>
+
+    <div class="container_crud">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Carrito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="producto in productos" :key="producto.codigo">
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td align="right">{{ producto.cantidad }}</td>
+            <td align="right">&nbsp; &nbsp; {{ producto.precio }}</td>
+            <td>
+              <button @click="agregarAlCarrito(producto)">&nbsp;&nbsp;<b>+</b>&nbsp;&nbsp;</button>
+              <button @click="restarDelCarrito(producto)">&nbsp;&nbsp;<b>-</b>&nbsp;&nbsp;</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div v-if="mostrarCarrito">
+        <h3>Productos en el carrito:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in carrito" :key="item.codigo">
+              <td>{{ item.codigo }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td align="right">{{ item.cantidad }}</td>
+              <td align="right">&nbsp; &nbsp; {{ item.precio }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div v-if="!mostrarCarrito" class="contenedor-centrado">
+        <button @click="obtenerCarrito">Mostrar carrito</button>
+      </div>
+  
+      <div class="contenedor-centrado">
+        <a href="crud.html">Menu principal</a>
+      </div>
+  
+    </div>
+  
+    <script>
+      //const URL = "http://127.0.0.1:5000/"
+      const URL = "https://wreviglio.pythonanywhere.com/"
+  
+      const app = Vue.createApp({
+        data() {
+          return {
+            productos: [],
+            mostrarCarrito: false,
+            carrito: [],
+          }
+        },
+        created() {
+          this.obtenerProductos()
+        },
+        methods: {
+          obtenerProductos() {
+            fetch(URL + 'productos')
+              .then(response => response.json())
+              .then(data => {
+                this.productos = data
+              })
+              .catch(error => {
+                console.error(URL + 'productos', error)
+                alert('Error al obtener los productos.')
+              })
+          },
+          agregarAlCarrito(producto) {
+            fetch(URL + 'carrito', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                codigo: producto.codigo,
+                cantidad: 1, // Agregamos una unidad al carrito
+              }),
+            })
+              .then(response => response.json())
+              .then(data => {
+                alert(data.message)
+              })
+              .catch(error => {
+                console.error('Error al agregar el producto al carrito:', error)
+                alert('Error al agregar el producto al carrito.')
+              })
+          },
+          restarDelCarrito(producto) {
+            fetch(URL + 'carrito', {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                codigo: producto.codigo,
+                cantidad: 1, // Restamos una unidad del carrito
+              }),
+            })
+              .then(response => response.json())
+              .then(data => {
+                alert(data.message)
+              })
+              .catch(error => {
+                console.error('Error al restar el producto del carrito:', error)
+                alert('Error al restar el producto del carrito.')
+              })
+          },
+          obtenerCarrito() {
+            fetch(URL + 'carrito')
+              .then(response => response.json())
+              .then(data => {
+                this.carrito = data
+                this.mostrarCarrito = true
+              })
+              .catch(error => {
+                console.error('Error al obtener el carrito:', error)
+                alert('Error al obtener el carrito.')
+              })
+          },
+        },
+      })
+      app.mount('#app')
+    </script>
+
+    </div>
+
+  </main>
+
+  <br>
+  <br>
+  <!--::::Pie de Pagina::::::-->
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="./index.html">
+            <img src="img/Logo_Música_Ligera2.png" alt="Logo de Musica Ligera2">
+          </a>
+        </figure>
+
+      </div>
+      <div class="box">
+        <ul>
+          <li><a href="./instrumentos_de_cuerda.html">Instrumentos de cuerda</a></li>
+          <li><a href="./instrumentos_de_viento.html">Instrumentos de viento</a></li>
+          <li><a href="./instrumentos_de_percusion.html">Instrumentos de percusión</a></li>
+          <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
+          <li><a href="./amplificadores.html">Amplificadores</a></li>
+          <li><a href="./accesorios.html">Accesorios</a></li>
+          <li><a href="./contactenos.html">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>SÍGUENOS</h2>
+        <div class="red-social">
+
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+
+          <p>
+            Cel. 3516782213<br>
+            musicaligerashop@gmail.com<br>
+            Av. Gral. Paz 354 Córdoba Argentina<br>
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grupo-2">
+      <small>&copy; 2023 <b>Musica Ligera Shop</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+</body>
+
+</html>
