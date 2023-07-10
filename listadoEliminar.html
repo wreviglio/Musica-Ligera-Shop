@@ -101,6 +101,7 @@
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
+      
     <script>
         //const URL = "http://127.0.0.1:5000/"
         const URL = "https://wreviglio.pythonanywhere.com/"
@@ -133,23 +134,28 @@
                             alert('Error al obtener los productos.');
                         });
                 },
+
                 eliminarProducto(codigo) {
                     // Eliminamos el producto de la fila seleccionada
-                    fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
+                    fetch(URL + `productos/${codigo} ` , )
                         .then(response => {
-                            if (response.ok) {
+                            if (confirm("¿Está seguro de eliminar el producto?",(response.ok))) {
+                              fetch(URL+ `productos/${codigo}`,{method: 'DELETE' })
                                 // Eliminar el producto de la lista después de eliminarlo en el servidor
                                 this.productos = this.productos.filter(producto => producto.codigo !== codigo);
                                 console.log('Producto eliminado correctamente.');
                             } else {
                                 // Si hubo un error, lanzar explícitamente una excepción
                                 // para ser "catcheada" más adelante
-                                throw new Error('Error al eliminar el producto.');
+                                event.preventDefault();
+                                throw new Error('El producto no fue eliminado')
+                                return eliminarProducto();
                             }
                         })
                         .catch(error => {
                             // Código para manejar errores
-                            alert('Error al eliminar el producto.');
+                            alert('El producto no fue eliminado')
+                            return 0;
                         });
                 }
             },
@@ -158,8 +164,8 @@
                 this.obtenerProductos();
             }
         });
-
         app.mount('body');
+      
     </script>
 
     </div>
