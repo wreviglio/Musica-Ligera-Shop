@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
   <title>Música Ligera Shop: Instrumentos de cuerda</title>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles1.css">
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="./img/icono_ml.ico">
 </head>
 
@@ -34,9 +36,9 @@
             <i class="fa-brands fa-whatsapp fa-2xl"></i>
           </a> -->
           <a href="./carrito1.html" title="carrito" class="link_carrito" id="link_carrito">
-            <i class="fa-solid fa-cart-shopping fa-xl"></i>   
-         </a>
-         
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          </a>
+
         </div>
       </div>
       <input type="checkbox" id="check">
@@ -73,36 +75,96 @@
     <br>
     <h1 class="title">Instrumentos de cuerda</h1>
 
-    <div class="container">
+    <div class="container" id="app">
 
       <div class="card">
         <img src="./img/guitarra-electro-criolla-yamaha-cgx102.jpg">
         <h4>$ 260.386</h4>
         <p>Guitarra Electro Criolla Yamaha CGX102</p>
-        <!-- <a href="#">Leer más</a> -->
+        <div class="contenedor-centrado container_crud">
+          <button @click="agregarAlCarrito(1)">Agregar al Carrito</button>
+        </div>
       </div>
 
       <div class="card">
         <img src="./img/Guitarra_Electroacústica_Accord_Folk.jpg">
         <h4>$ 138.444</h4>
         <p>Guitarra Electroacústica Accord Folk</p>
-        <!-- <a href="#">Leer más</a> -->
+        <div class="contenedor-centrado container_crud">
+          <button @click="agregarAlCarrito(2)">Agregar al Carrito</button>
+        </div>
       </div>
 
       <div class="card">
         <img src="./img/Guitarra_Eléctrica_Carter_Vintage_ST350.jpg">
         <h4>$ 193.498</h4>
         <p>Guitarra Eléctrica Carter Vintage ST350</p>
-        <!-- <a href="#">Leer más</a> -->
+        <div class="contenedor-centrado container_crud">
+          <button @click="agregarAlCarrito(3)">Agregar al Carrito</button>
+        </div>
       </div>
 
       <div class="card">
         <img src="./img/Bajo_Ibanez_Gsr-390.jpg">
         <h4>$ 182.122</h4>
         <p>Bajo Eléctrico Ibanez GSR-390</p>
-        <!-- <a href="#">Leer más</a> -->
+        <div class="contenedor-centrado container_crud">
+          <button @click="agregarAlCarrito(4)">Agregar al Carrito</button>
+        </div>
       </div>
     </div>
+
+    <script>
+      //const URL = "http://127.0.0.1:5000/"
+      const URL = "https://wreviglio.pythonanywhere.com/"
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            productos: [],
+            mostrarCarrito: false,
+            carrito: [],
+          }
+        },
+        created() {
+          this.obtenerProductos()
+        },
+        methods: {
+          obtenerProductos() {
+            fetch(URL + 'productos')
+              .then(response => response.json())
+              .then(data => {
+                this.productos = data
+              })
+              .catch(error => {
+                console.error(URL + 'productos', error)
+                alert('Error al obtener los productos.')
+              })
+          },
+          agregarAlCarrito(cod) {
+            fetch(URL + 'carrito', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                codigo: cod,
+                cantidad: 1, // Agregamos una unidad al carrito
+              }),
+            })
+              .then(response => response.json())
+              .then(data => {
+                alert(data.message)
+              })
+              .catch(error => {
+                console.error('Error al agregar el producto al carrito:', error)
+                alert('Error al agregar el producto al carrito.')
+              })
+          },
+        },
+      })
+      app.mount('#app')
+    </script>
 
   </main>
 
