@@ -3,16 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Música Ligera Shop: Contáctenos</title>
-  <link rel="stylesheet" href="./css/styles.css">
+  <title>Musica Ligera Shop</title>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--Iconos-->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="icon" href="./img/icono_ml.ico">
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="./img/icono_ml.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -47,87 +47,82 @@
         <img src="./img/Logo_Música_Ligera2.png" alt="" class="logo">
       </a>
       <ul>
-        <li><a href="./index.html">Inicio</a></li>
+        <li><a class="active" href="#">Inicio</a></li>
         <li><a href="#">Instrumentos <i class="fa-solid fa-caret-right"></i></a>
           <div id="menu">
             <ul>
               <li><a href="./instrumentos_de_cuerda.html">De cuerda</a></li>
               <li><a href="./instrumentos_de_viento.html">De viento</a></li>
-              <li><a href="./instrumentos_de_percusion.html">De percusión</a></li>
+              <li><a href="./instrumentos_de_percusion.html">De Percusión</a></li>
               <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
             </ul>
           </div>
         </li>
         <li><a href="./amplificadores.html">Amplificadores</a></li>
         <li><a href="./accesorios.html">Accesorios</a></li>
-        <li><a class="active" href="./contactenos.html">Contacto</a></li>
+        <li><a href="./contactenos.html">Contacto</a></li>
         <li><a href="./login.html">Login</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main: Bloque principal con formulario de contacto -->
-  <main>
-   <div class="flexbox-container">
-      <form name="Formulario">
+
+   <main>
 
 
-      <div class="col-6">
-        <div class="formulario_01">
 
-          <h1>Contactanos por consultas y comentarios</h1>
-          <br>
-          <label for="Name"> Nombre</label>
-          <br>
-          <input id="Name" type= "text" name= "Nombre" placeholder= "Nombre(s)" required >
-          <br>
-          <label for="Second Name"> Apellido</label>
-          <br>
-          <input id="Second Name" type= "text" name= "Apellido" placeholder= "Apellido(s)" required >
-          <br>
-          <label for="Cell Number"> Teléfono</label>
-          <br>
-          <input id="Cell Number" type= "text" name= "Telefono" placeholder= "11-0000-1111" required >
-          <br>
-          <label for="user-email">Email: </label>
-          <br>
-          <input type="email" id="user-email" name="userEmail" onclick="return"validateEmail required >
-
-          <br>
-
-          <label for="Message"> Comentarios</label>
-          <br>
-          <textarea id="Message" name= "Comentarios" rows="5" cols="50" placeholder="Sus opiniones serán tomadas en cuenta" required></textarea>
-          <br>
-          <input type="checkbox" name="checkbox" id="terminos" value="check" required> Acepto los Términos y Condiciones* 
-          <br>  
-          <input type="submit" name="enviar" value="Enviar datos"onclick="ValidarInfo()">
-          <br>
-
-        </div>
-      </div>
-
-      <div class="mapa">
-        <div class="aside">
-
-          <h2> ¡Encuentranos!</h2>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.1044459436184!2d-64.1849158!3d-31.411248299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329878402844c7%3A0xbb087cd82d9bfee6!2sGral.%20Paz%20354%2C%20X2568BHQ%20C%C3%B3rdoba!5e0!3m2!1sen!2sar!4v1684374072552!5m2!1sen!2sar"
-           width=150% height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-
-          </iframe>
-
-        </div>
-      </div>
-
-      </form>
-      <p id="opTag"></p>
-
-    </div>
+    <h2>Ingresa Tus Datos</h2> 
+    <form name="login"> 
+         <table width="200" border="0"> 
+           <tr> 
+             <th scope="row"><h3>Usuario</h3></th> 
+             <td><span class="cnt"> 
+               <input name="usuario" type="text" class="Input" value="" size="20" /> 
+             </span></td> 
+           </tr> 
+           <tr> 
+             <th height="33" scope="row"><h3>Clave</h3></th> 
+             <td><span class="cnt"> 
+               <input name="password" type="password" class="Input" value="" size="20" /> 
+             </span></td> 
+             <td><span class="cnt"> 
+               <input value="Entrar" target="_parent" onclick="Login()" type="button" class="boton"/> 
+             </span></td> 
+           </tr> 
+           <tr> 
+             <th scope="row"><input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton" /></th> 
+           </tr> 
+         </table> 
+    </form> 
     
+    <script language="JavaScript"> 
+    function Login(){ 
+    var done=0; 
+    var usuario=document.login.usuario.value; 
+    var password=document.login.password.value; 
+    if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
+    window.location="./crud.html"; 
+    } 
+    if (usuario=="USUARIO2" && password=="CONTRASEÑA2") { 
+    window.location="./crud.html"; 
+    } 
+    if (usuario=="" && password=="") { 
+    window.location="errorpopup.html"; 
+    } 
+    } 
+            </script> 
+    </center> 
+    <script language="Javascript"> 
+    <!-- Begin 
+    document.oncontextmenu = function(){return false} 
     
+    </script>
+    </body>
+
+
+   
   </main>
 
-  <br>
   <!--::::Pie de Pagina::::::-->
   <footer class="pie-pagina">
     <div class="grupo-1">
@@ -162,10 +157,11 @@
           <p>
             Cel. 3516782213<br>
             musicaligerashop@gmail.com<br>
-            Av. Gral. Paz 354 Córdoba Argentina<br>
-            <br>
+            Av. Gral. Paz 354 Córdoba Argentina
           </p>
         </div>
+        <a class="tpo1" href="./tpo.html">TPO</a><br>
+        <a class="tpo1" href="./crud.html">CRUD</a>
       </div>
     </div>
 
@@ -174,9 +170,7 @@
     </div>
   </footer>
 
-
-  <script src="./js/contactenos.js"></script>
-
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
