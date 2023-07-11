@@ -7,6 +7,8 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="./css/styles1.css">
   <!--Iconos-->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -35,8 +37,8 @@
             <i class="fa-brands fa-whatsapp fa-2xl"></i>
           </a> -->
           <a href="./carrito1.html" title="carrito" class="link_carrito" id="link_carrito">
-            <i class="fa-solid fa-cart-shopping fa-xl"></i>   
-         </a>
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          </a>
         </div>
       </div>
       <input type="checkbox" id="check">
@@ -99,62 +101,78 @@
 
       <h1 class="title">Productos destacados</h1>
 
-      <div class="container">
+      <div class="container" id="app">
 
         <div class="card">
           <img src="./img/Bateria_De_5_Cuerpos_+_Banqueta_Y_Platillos_Natal_Dna_Roja.jpg">
           <h4>$ 192.878</h4>
           <p>Bateria De 5 Cuerpos + Banqueta Y Platillos Natal Dna Roja</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(9)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/guitarra-electro-criolla-yamaha-cgx102.jpg">
           <h4>$ 260.386</h4>
           <p>Guitarra Electro Criolla Yamaha CGX102</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(1)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/Afinador_De_Guitarra_Bajo_Ukelele_Violin_Clip_Cromático.jpg">
           <h4>$ 2.490</h4>
           <p>Afinador De Guitarra Bajo Ukelele Violin Clip Cromático</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(23)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/Eufonio_Bb_4_Pistones_Stagg_Wsep245s_Con_Estuche.jpg">
           <h4>$ 428.425</h4>
           <p>Eufonio Bb 4 Pistones Stagg Wsep245s Con Estuche</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(8)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/Piano_De_Cola_Yamaha_Gb1kpe.jpg">
           <h4>$ 11.431.294</h4>
           <p>Piano De Cola Yamaha Gb1kpe</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(16)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/Bombo_Leguero_Criollo_Nº7_Nacional_Premium.jpg">
           <h4>$ 48.399</h4>
           <p>Bombo Leguero Criollo Nº7 Nacional Premium</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(12)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/2_Soportes_Pie_Microfono_Jirafa_Plegable_+_funda_+_pipeta_Inala.jpg">
           <h4>$ 14.999</h4>
           <p>2 Soportes Pie Microfono Jirafa Plegable+funda+pipeta Inala</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(24)">Agregar al Carrito</button>
+          </div>
         </div>
 
         <div class="card">
           <img src="./img/Guitarra_Eléctrica_Carter_Vintage_ST350.jpg">
           <h4>$ 193.498</h4>
           <p>Guitarra Eléctrica Carter Vintage ST350</p>
-          <!-- <a href="#">Leer más</a> -->
+          <div class="contenedor-centrado container_crud">
+            <button @click="agregarAlCarrito(3)">Agregar al Carrito</button>
+          </div>
         </div>
 
       </div>
@@ -172,6 +190,58 @@
       <div id="clientes"></div>
     </div>
     <br>
+
+    <script>
+      //const URL = "http://127.0.0.1:5000/"
+      const URL = "https://wreviglio.pythonanywhere.com/"
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            productos: [],
+            mostrarCarrito: false,
+            carrito: [],
+          }
+        },
+        created() {
+          this.obtenerProductos()
+        },
+        methods: {
+          obtenerProductos() {
+            fetch(URL + 'productos')
+              .then(response => response.json())
+              .then(data => {
+                this.productos = data
+              })
+              .catch(error => {
+                console.error(URL + 'productos', error)
+                alert('Error al obtener los productos.')
+              })
+          },
+          agregarAlCarrito(cod) {
+            fetch(URL + 'carrito', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                codigo: cod,
+                cantidad: 1, // Agregamos una unidad al carrito
+              }),
+            })
+              .then(response => response.json())
+              .then(data => {
+                alert(data.message)
+              })
+              .catch(error => {
+                console.error('Error al agregar el producto al carrito:', error)
+                alert('Error al agregar el producto al carrito.')
+              })
+          },
+        },
+      })
+      app.mount('#app')
+    </script>
 
   </main>
 
@@ -223,7 +293,19 @@
   </footer>
 
   <script src="./js/script.js"></script>
-  <div id="whatsAppWidget" style="position: fixed; right: 20px; bottom: 3px; float: left; margin-bottom: 60px; z-index:20;"><a href="https://api.whatsapp.com/send?phone=543516782213&amp;text=%C2%A1Hola%21+Estoy+en+la+tienda+M%C3%BAsica+Ligera+Shop+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n." target="_blank" rel="noopener noreferer nofollow"><div style="float: right; height: 50px; width: 50px; border-radius: 50%; overflow: hidden; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); text-align: center; line-height: 50px; color: white; background-color: #4dc247;"><svg style="display: inline; fill: white" viewBox="0 0 32 32" width="41px" height="50px" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></svg></div></a></div>
+  <div id="whatsAppWidget"
+    style="position: fixed; right: 20px; bottom: 3px; float: left; margin-bottom: 60px; z-index:20;"><a
+      href="https://api.whatsapp.com/send?phone=543516782213&amp;text=%C2%A1Hola%21+Estoy+en+la+tienda+M%C3%BAsica+Ligera+Shop+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n."
+      target="_blank" rel="noopener noreferer nofollow">
+      <div
+        style="float: right; height: 50px; width: 50px; border-radius: 50%; overflow: hidden; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); text-align: center; line-height: 50px; color: white; background-color: #4dc247;">
+        <svg style="display: inline; fill: white" viewBox="0 0 32 32" width="41px" height="50px"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path
+            d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+            fill-rule="evenodd"></path>
+        </svg></div>
+    </a></div>
 </body>
 
 </html>
