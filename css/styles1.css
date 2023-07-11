@@ -19,7 +19,7 @@
     padding: 20px;
 }
 
-.container_crud h1, h2, h3, h4, h5, h6 {
+.container_crud h1, .container_crud h2, .container_crud h3, .container_crud h4, .container_crud h5, .container_crud h6 {
     text-align: center;
     color: #757678;
 }
