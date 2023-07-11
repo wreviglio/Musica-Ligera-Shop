@@ -47,7 +47,7 @@
         <img src="./img/Logo_Música_Ligera2.png" alt="" class="logo">
       </a>
       <ul>
-        <li><a class="active" href="#">Inicio</a></li>
+        <li><a  href="#">Inicio</a></li>
         <li><a href="#">Instrumentos <i class="fa-solid fa-caret-right"></i></a>
           <div id="menu">
             <ul>
@@ -61,7 +61,7 @@
         <li><a href="./amplificadores.html">Amplificadores</a></li>
         <li><a href="./accesorios.html">Accesorios</a></li>
         <li><a href="./contactenos.html">Contacto</a></li>
-        <li><a href="./login.html">Login</a></li>
+        <li><a class="active" href="./login.html">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -100,23 +100,15 @@
     var done=0; 
     var usuario=document.login.usuario.value; 
     var password=document.login.password.value; 
-    if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
+    if ((usuario=="USUARIO1" && password=="CONTRASEÑA1")||(usuario=="USUARIO2" && password=="CONTRASEÑA2")) { 
     window.location="./crud.html"; 
     } 
-    if (usuario=="USUARIO2" && password=="CONTRASEÑA2") { 
-    window.location="./crud.html"; 
+    else{ 
+               alert("Por favor ingrese nombre de usuario y contraseña correcto."); 
+          } 
     } 
-    if (usuario=="" && password=="") { 
-    window.location="errorpopup.html"; 
-    } 
-    } 
-            </script> 
-    </center> 
-    <script language="Javascript"> 
-    <!-- Begin 
-    document.oncontextmenu = function(){return false} 
+    </script> 
     
-    </script>
     </body>
 
 
@@ -142,7 +134,7 @@
           <li><a href="./pianos_y_teclados.html">Pianos y teclados</a></li>
           <li><a href="./amplificadores.html">Amplificadores</a></li>
           <li><a href="./accesorios.html">Accesorios</a></li>
-          <li><a href="./contactenos.html">Contáctenos</a></li>
+          <li><a href="./contactenos.html">Contacto</a></li>
         </ul>
       </div>
       <div class="box">
