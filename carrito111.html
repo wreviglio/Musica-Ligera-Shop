@@ -164,22 +164,22 @@
             comprarProductos() {
               fetch(URL + 'carrito')
                 .then(response => {
-                  if (confirm("¿Está seguro de vaciar el carrito?", (response.ok))) {
+                  if (confirm("¿Confirma la compra de los productos del carrito?", (response.ok))) {
                     fetch(URL + 'carrito' , { method: 'DELETE', })
                     // Eliminar los productos de la lista después de eliminarlos en el servidor
                     this.obtenerCarrito();
-                    console.log('Carrito vaciado correctamente.');
+                    console.log('Compra realizada correctamente.');
                   } else {
                     // Si hubo un error, lanzar explícitamente una excepción
                     // para ser "catcheada" más adelante
                     event.preventDefault();
-                    throw new Error('El carrito no fue vaciado')
+                    throw new Error('No se efectuó la compra')
                     return vaciarCarrito();
                   }
                 })
                 .catch(error => {
                   // Código para manejar errores
-                  alert('El carrito no fue vaciado')
+                  alert('La compra no fue efectuada')
                   return 0;
                 });
             },
