@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Música Ligera Shop: Proyecto final</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./img/icono_ml.ico">
+</head>
+
+<body class="tpo">
+    <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+    <h1>PROYECTO FINAL<br>Curso Python-Frontend comisión Nº 23027</h1>
+    <h4>Profesor Damian Rol</h4>
+    <br>
+    <h3>Integrantes del grupo:</h3>
+
+    <div class="container">
+        <div class="card" style="height: 300px; !important">
+            <img src="./img/foto_naty.jpg">
+            <h4>Diaz Natalia</h4>
+            <p>...........</p>
+        </div>
+
+        <div class="card" style="height: 300px; !important">
+            <img src="./img/foto_yani.jpg">
+            <h4>Scardino Di Mella Yanina Mariana</h4>
+            <p>............</p>
+        </div>
+
+        <div class="card" style="height: 300px; !important">
+            <img src="./img/foto_david.jpg">
+            <h4>Osorio Callejas David</h4>
+            <p>Buenos Aires CABA</p>
+        </div>
+
+        <div class="card" style="height: 300px; !important">
+            <img src="./img/foto_walter.jpg">
+            <h4>Reviglio Walter</h4>
+            <p>Córdoba Capital</p>
+        </div>
+    </div>
+
+    <br>
+    <h3>Sitio web:</h3>
+    <div><img src="./img/Logo_Música_Ligera2.png" alt="" class="logo"></div>
+    <h3>Tienda de instrumentos musicales y accesorios.</h3>
+    <br>
+    <h3>Link:</h3>
+    <h3><a
+            href="https://musica-ligera-shop.netlify.app/index.html">https://musica-ligera-shop.netlify.app/index.html</a>
+    </h3>
+    <br>
+    <h3>Resumen de los cambios que hicimos</h3>
+    <br>
+    <h3>Sitio web:</h3>
+    <ul>
+        <li>Incorporamos el CRUD al sitio web</li>
+        <li>Adaptamos los colores del CRUD a la paleta existente y también la estética</li>
+        <li>Agregamos en todas las páginas la hoja de estilo del CDRUD y el src de Vue</li>
+    </ul>
+    <br>
+    <h3>Carrito de compras:</h3>
+    <ul>
+        <li>Eliminamos la opción "Carrito de compras" del menú del CRUD para separar las acciobnes del cliente de las
+            del administrador.</li>
+        <li>Agregamos un icono en el header para que el cliente pueda acceder y ver el contenido del Carrito.</li>
+        <li>Agregamos también un botón con la leyenda "Agregar al carrito" en las tarjeta de productos que se muestran
+            en las distintas secciones del sitio.</li>
+        <li>Reemplazamos el link de "Menú principal" por "Seguir comprando" en el carrito.</li>
+        <li>Invertimos el orden, primero mostramos el conteido del carrito y damos la opción de mostrar el listado de stock.</li>
+        <li>Agregamos signo pesos a los precios.</li>
+    </ul>
+    <br>
+    <h3>Administración:</h3>
+    <ul>
+        <li>Agregamos una opción en el menu del Header llamada "Login" para que puedan acceder los administradores.</li>
+        <li>Agregamos un control de acceso al CRUD con usuario y contraseña, y validación por JS.</li>
+        <li>Agregamos también en el CRUD el pedido de confirmación antes de dar de baja un producto.</li>
+    </ul>
+    <br>
+    <h3>Testing:</h3>
+    <ul>
+        <li>Cargamos todos los productos del sitio web en el inventario.</li>
+        <li>Hicimos altas, modificaciones, listados y bajas de productos.</li>
+        <li>Agregamos productos al carrito desde las tarjetas de productos.</li>
+        <li>Aumentamos y disminuimos la cantidad de unidades cargadas al carrito.</li>
+        <li>Modificamos el script para los cambios se puedan ver sin actualizar la página.</li>
+    </ul>
+    <br>
+    <div id="whatsAppWidget"
+        style="position: fixed; right: 20px; bottom: 3px; float: left; margin-bottom: 60px; z-index:20;"><a
+            href="https://api.whatsapp.com/send?phone=543516782213&amp;text=%C2%A1Hola%21+Estoy+en+la+tienda+M%C3%BAsica+Ligera+Shop+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n."
+            target="_blank" rel="noopener noreferer nofollow">
+            <div
+                style="float: right; height: 50px; width: 50px; border-radius: 50%; overflow: hidden; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); text-align: center; line-height: 50px; color: white; background-color: #4dc247;">
+                <svg style="display: inline; fill: white" viewBox="0 0 32 32" width="41px" height="50px"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path
+                        d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+                        fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </a></div>
+</body>
