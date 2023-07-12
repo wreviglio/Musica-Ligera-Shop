@@ -89,8 +89,8 @@
             <tr v-for="producto in productos">
                 <td>{{ producto.codigo }}</td>
                 <td>{{ producto.descripcion }}</td>
-                <td>{{ producto.cantidad }}</td>
-                <td align="right">{{ producto.precio }}</td>
+                <td align="center">{{ producto.cantidad }}</td>
+                <td align="right">$ {{ producto.precio }}</td>
                 <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
             </tr>
         </tbody>
