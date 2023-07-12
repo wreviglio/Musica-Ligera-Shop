@@ -1,0 +1,108 @@
+/* Estilos para todo el proyecto */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+*/
+
+.contenedor-centrado {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container_crud p {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f9f9f9;
+    max-width: 400px;
+    margin: 20 auto;
+    padding: 20px;
+}
+
+.container_crud h1, .container_crud h2, .container_crud h3, .container_crud h4, .container_crud h5, .container_crud h6 {
+    text-align: center;
+    color: #757678;
+}
+
+.img {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container_crud form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+} 
+
+.container_crud table {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+}
+
+#formulario label {
+    display: block;
+    margin-bottom: 5px;
+    margin: initial;
+}
+
+.container_crud input[type="text"],
+.container_crud input[type="number"],
+.container_crud textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.container_crud input[type="submit"] {
+    padding: 10px;
+    background-color: #757678;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container_crud input[type="submit"]:hover {
+    background-color: #333;
+}
+
+.container_crud button {
+    padding: 8px;
+    margin:4px;
+    background-color: #757678;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container_crud button:hover {
+    background-color: #333;
+}
+
+.container_crud a {
+    padding: 8px;
+    margin:4px;
+    background-color: #f00;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 85%;
+}
+
+.container_crud a:hover {
+    background-color: #333;
+} 
